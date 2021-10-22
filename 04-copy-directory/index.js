@@ -6,7 +6,6 @@ const { copyFile } = require('fs/promises');
 async function copy() {
   fs.mkdir(path.join(__dirname, 'files-copy'), { recursive: true }, err => {
     if (err) throw err;
-    console.log('Папка была создана');
   });
 
   try {
