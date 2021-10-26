@@ -15,7 +15,7 @@ async function mergeStyles() {
           const filePath = path.join(__dirname, `/styles/${file.name}`);
           fs.readFile(filePath, 'utf-8', function(error, data) {
             if(error) throw error;
-            fs.writeFile(path.join(__dirname, 'styles', 'bundle.css'), data,
+            fs.writeFile(path.join(__dirname, 'bundle.css'), data,
               (err) => {
                 if (err) throw err;
               }
