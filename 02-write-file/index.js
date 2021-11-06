@@ -10,14 +10,14 @@ const readline = require('readline').createInterface({
 let writeFile = fs.createWriteStream(path.join(__dirname, 'text.txt'));
 console.log('What is your name?')
 
-readline.on('line', (name) => {
-  writeToFile(name);
+readline.on('line', (data) => {
+  writeToFile(data);
 });
 
 process.on('beforeExit', () => goodbye());
 
-function writeToFile(key, name) {
-  if (key && key.name === 'c' && key.ctrl && name === 'exit') {
+function writeToFile(name, key) {
+  if (key && key.name === 'c' && key.ctrl || name == 'exit') {
     goodbye(),
     process.exit();
   }
@@ -26,5 +26,5 @@ function writeToFile(key, name) {
 }
 
 function goodbye() {
-  console.log('goodbye');
+  console.log('goodbye!');
 }
