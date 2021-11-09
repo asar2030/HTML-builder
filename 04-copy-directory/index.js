@@ -22,6 +22,5 @@ async function copy() {
   } catch (err) {
     console.error(err);
   }
-
 }
 copy();
