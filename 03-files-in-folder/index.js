@@ -14,7 +14,7 @@ async function getFiles() {
         const fileType = path.extname(`${path.join(__dirname, `secret-folder/${file.name}`)}`).slice(1);
         let stats = fs.statSync(filePath);
         let fileSize = stats.size;
-        console.log(`${path.parse(filePath).name} - ${fileType} - ${fileSize}kb`);
+        console.log(`${path.parse(filePath).name} - ${fileType} - ${fileSize/1000}kb`);
       }
   } catch (err) {
     console.error(err);
